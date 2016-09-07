@@ -8,10 +8,15 @@ A demo for the curriculum material covering:
 
 ## Getting started
 
+Clone the repo and run a local server out of the directory with:
+
+```bash
+$ ruby -run -e httpd . -p 3000
+```
+
+Navigate to the home page and click any one of the links to take you to the page with examples for that topic.
 
 
-
-## Additional Info
 
 
 
