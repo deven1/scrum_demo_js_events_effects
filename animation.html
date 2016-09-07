@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Animations</title>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <h1>
+      <a href="/">JavaScript and jQuery Events and Effects</a>
+    </h1>
+
+
+    <div id="target" style="position: relative; width: 512px; height: 512px; background: red;"></div>
+    <button onclick="runAnimation()">Run Animation</button>
+
+    <script>
+
+      function runAnimation() {
+        $('#target').css('left', '0');
+
+        $('#target').show()
+          .hide()
+          .fadeIn(1000)
+          .fadeOut(1000)
+          .slideDown(1000)
+          .slideUp(1000)
+          .slideDown(1000)
+          .animate({
+            left: '+=512px'
+          }, 1000, function() {
+            alert('Done!');
+          });
+      }
+
+      $(document).ready(function(e) {
+
+        runAnimation();
+
+      });
+
+    </script>
+  </body>
+</html>
+
+
+

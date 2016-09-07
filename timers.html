@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Timers</title>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <h1>
+      <a href="/">JavaScript and jQuery Events and Effects</a>
+    </h1>
+
+
+    <button onclick="createTimeout()">Create Timeout</button>
+    <button onclick="createInterval()">Create Interval</button>
+    <button onclick="destroyTimeout()">Destroy Timeout</button>
+    <button onclick="destroyInterval()">Destroy Interval</button>
+
+
+
+    <script>
+      var timeoutReference,
+          intervalReference;
+
+      function createTimeout() {
+        timeoutReference = setTimeout(function() {
+          alert('Three seconds just went by!');
+        }, 3000);
+      }
+
+      function createInterval() {
+        intervalReference = setInterval(function() {
+          alert('Two seconds just went by!');
+        }, 2000);
+      }
+
+      function destroyTimeout() {
+        clearTimeout(timeoutReference);
+      }
+
+      function destroyInterval() {
+        clearInterval(intervalReference);
+      }
+
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+<!-- 
+
+// delay execution with a timeout
+setTimeout(function(){console.log("Finally!")},10000);
+
+// set a never-ending interval
+setInterval(function(){console.log("Forever...")}, 1000);
+
+// Stop a globally named interval
+myInterval = setInterval(function(){...}, 1000);
+clearInterval(myInterval);
+
+// Stop a globally named timeout before it runs
+myTimeout = setTimeout(function(){...}, 10000);
+clearTimeout(myTimeout);
+
+ -->
+
+
+

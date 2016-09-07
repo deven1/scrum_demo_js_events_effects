@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Clicks</title>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <h1>
+      <a href="/">JavaScript and jQuery Events and Effects</a>
+    </h1>
+
+
+    <ul id="list">
+      <li>Hi</li>
+    </ul>
+
+    <button onclick="addListItem()">Add List Item</button>
+    <button onclick="turnOffClickEvents()">Turn Off Clicks</button>
+    <button onclick="turnOnClickEvents()">Turn On Clicks</button>
+    <button onclick="triggerListItemClick()">Trigger List Item Click</button>
+
+
+    <script>
+      function addListItem() {
+        $('#list').append($('<li>').text('Added List Item'));
+      }
+
+      function turnOffClickEvents() {
+        $('#list').off('click');
+        $('#list li').off('click');
+      }
+
+      function triggerListItemClick() {
+        $('li').first().trigger('click');
+      }
+
+      function turnOnClickEvents() {
+        $('#list li').click(function(e) {
+          console.log(e);
+          alert('You clicked a list item!');
+        });
+
+        $('#list').on('click', 'li', function(e) {
+          alert('You clicked a list item with a delegated event listener!');
+        });
+      }
+
+      $(document).ready(function(e) {
+
+        turnOnClickEvents();        
+
+      });
+    </script>
+  </body>
+</html>
+
+
+
+
